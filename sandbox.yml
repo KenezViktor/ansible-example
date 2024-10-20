@@ -1,0 +1,6 @@
+---
+- name: "Playbook 'Sandbox'"
+  hosts: sandbox
+  roles:
+    - basic
+    # - docker
