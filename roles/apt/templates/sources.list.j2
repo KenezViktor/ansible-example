@@ -1,0 +1,10 @@
+deb {{ source_url }} {{ ansible_distribution_release }} {{ components }}
+{% if repos.updates_enabled %}
+deb {{ source_url }} {{ ansible_distribution_release }}-updates {{ components }}
+{% endif %}
+{% if repos.backports_enabled %}
+deb {{ source_url }} {{ ansible_distribution_release }}-backports {{ components }}
+{% endif %}
+{% if repos.security_enabled %}
+deb {{ source_url }}-security {{ ansible_distribution_release }}-security {{ components }}
+{% endif %}

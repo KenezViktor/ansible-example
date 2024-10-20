@@ -1,0 +1,8 @@
+source_url: "http://deb.debian.org/debian"
+repos:
+  updates_enabled: true
+  backports_enabled: false
+  security_enabled: true
+components: "main contrib"
+
+upgrade_enabled: false
