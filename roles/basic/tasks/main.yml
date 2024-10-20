@@ -3,3 +3,8 @@
   ansible.builtin.include_role:
     name: "apt"
   when: 'ansible_os_family == "Debian"'
+
+- name: "Include docker role"
+  ansible.builtin.include_role:
+    name: "docker"
+  when: docker_enabled
