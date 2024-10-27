@@ -1,0 +1,4 @@
+---
+- name: "Reconfigure keyboard"
+  ansible.builtin.command: /usr/sbin/dpkg-reconfigure -f noninteractive keyboard-configuration
+  when: ansible_os_family == 'Debian'

@@ -10,8 +10,19 @@
     state: present
   with_items: "{{ locales }}"
 
+- name: "Install keyboard-configuration"
+  ansible.builtin.apt:
+    name: keyboard-configuration
+    state: present
+
+- name: "Configure keyboard"
+  ansible.builtin.template:
+    src: "keyboard.j2"
+    dest: "/etc/default/keyboard"
+    mode: "0755"
+  notify: "Reconfigure keyboard"
+
 - name: "Include docker role"
   ansible.builtin.include_role:
     name: "docker"
   when: docker_enabled
-
