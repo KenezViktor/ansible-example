@@ -1,3 +1,10 @@
 docker_enabled: true
 locales:
   - "hu_HU.UTF-8"
+
+keyboard:
+  model: "pc105"
+  layout: "hu"
+  variant: ""
+  options: ""
+  backspace: "guess"
