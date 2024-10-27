@@ -4,6 +4,12 @@
     name: "apt"
   when: 'ansible_os_family == "Debian"'
 
+- name: "Ensure locales are set"
+  community.general.locale_gen:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ locales }}"
+
 - name: "Include docker role"
   ansible.builtin.include_role:
     name: "docker"
